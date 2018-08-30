@@ -22,7 +22,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqi-Aj-AQG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="65" id="zrL-O9-9RU"/>
                         </constraints>

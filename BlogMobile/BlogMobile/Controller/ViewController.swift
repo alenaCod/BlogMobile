@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    fileprivate var post = [JSONPost]() {
+    fileprivate var post:[JSONPost] = [] {
         didSet{
         self.tableView.reloadData()
         }
