@@ -13,10 +13,11 @@ class APIService {
     
     static let sharedInstance = APIService()
     
+    //let currentEndPoint = EndPoint.sharedInstance
+    
     func getPosts(comletion: @escaping (_ result: [JSONPost]?) -> Void) {
-        let url = "http://fed-blog.herokuapp.com/api/v1/posts?page=0&size=20"
-        
-        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default)
+        let endpoint = Endpoint.postRequest
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: nil, encoding: JSONEncoding.default)
             .responseJSON { response in
                 
                 let decoder = JSONDecoder()
@@ -34,27 +35,4 @@ class APIService {
         }
     }
 }
-//                print("====",response.request)
-//                print("---",response.response)
-//                print("#####",response.data)
-//                print("/////",response.result)
-//
-//                if let json = response.result.value {
-//                    print("succes",json)
-//                    let post: [JSONPost] = try
-//                    decoder.decode([JSONPost].self, from: result)
-//                    print("post: ", post)
-//                    completion(post)
-//                } else {
-//                    print("error")
-//                }
-//
-//                    let res = ParserResponseUtils.parseSearchResponse(json).prefix(Constants.recipeLimit)
-                   // comletion(Array(res))
-//                } else {
-//                    comletion(response)//[])
-//                }
-//        }
-//    }
-//
-//}
+
