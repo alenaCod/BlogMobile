@@ -13,8 +13,6 @@ class APIService {
     
     static let sharedInstance = APIService()
     
-    //let currentEndPoint = EndPoint.sharedInstance
-    
     func getPosts(comletion: @escaping (_ result: [JSONPost]?) -> Void) {
         let endpoint = Endpoint.postRequest
         Alamofire.request(endpoint.url, method: endpoint.method, parameters: nil, encoding: JSONEncoding.default)

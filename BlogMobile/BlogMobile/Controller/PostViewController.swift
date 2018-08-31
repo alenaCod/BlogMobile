@@ -9,17 +9,16 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class PostViewController: UIViewController {
     
     static let nibName = "PostCell"
     static let cellIdentifier = "PostCellID"
-    
+
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    fileprivate var post:[JSONPost] = [] {
+
+     fileprivate var post:[JSONPost] = [] {
         didSet{
-        self.tableView.reloadData()
+            tableView.reloadData()
         }
     }
     
@@ -28,13 +27,8 @@ class ViewController: UIViewController {
         
         loadPostsFromServer()
         initTableView()
-        
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     private func loadPostsFromServer() {
         APIService.sharedInstance.getPosts(comletion: {
             [weak self] result in
@@ -49,18 +43,31 @@ class ViewController: UIViewController {
     }
     
     private func initTableView() {
-        let nib = UINib(nibName: ViewController.nibName, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: ViewController.cellIdentifier)
+        let nib = UINib(nibName: PostViewController.nibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: PostViewController.cellIdentifier)
         tableView.backgroundView = UIView(frame: .zero)
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.separatorStyle = .none
+        
+        tableView.estimatedRowHeight = 65.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    func goToDetailPost(forPost post: JSONPost){
+        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailPostViewController") as! DetailPostViewController
+            detailVC.post = post
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
 
-extension ViewController: UITableViewDataSource {
+extension PostViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.cellIdentifier) as! PostCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostViewController.cellIdentifier) as! PostCell
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         cell.configureCell(forPost: post[indexPath.row])
@@ -70,16 +77,12 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return post.count
     }
-    
 }
 
-extension ViewController: UITableViewDelegate {
+extension PostViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //selectedWeatherData = dailyWeatherData[indexPath.row]
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+       let p = post[indexPath.row]
+        goToDetailPost(forPost: p)
     }
 }
 

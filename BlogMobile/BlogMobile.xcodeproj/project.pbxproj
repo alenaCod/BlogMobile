@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3AFFCFE0E9AC45B0A790F973 /* Pods_BlogMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349B992B3BA23EE45F9A6491 /* Pods_BlogMobile.framework */; };
 		B34438D521353BAE006480DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438D421353BAE006480DF /* AppDelegate.swift */; };
-		B34438D721353BAE006480DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438D621353BAE006480DF /* ViewController.swift */; };
+		B34438D721353BAE006480DF /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438D621353BAE006480DF /* PostViewController.swift */; };
 		B34438DA21353BAE006480DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34438D821353BAE006480DF /* Main.storyboard */; };
 		B34438DC21353BAF006480DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34438DB21353BAF006480DF /* Assets.xcassets */; };
 		B34438DF21353BAF006480DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34438DD21353BAF006480DF /* LaunchScreen.storyboard */; };
@@ -18,6 +18,8 @@
 		B34438EE21363A69006480DF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438ED21363A69006480DF /* EndPoint.swift */; };
 		B34438F22137DA4C006480DF /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438F02137DA4C006480DF /* PostCell.swift */; };
 		B34438F32137DA4C006480DF /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34438F12137DA4C006480DF /* PostCell.xib */; };
+		B39B9768213835CC003619B6 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39B9767213835CC003619B6 /* DetailPostViewController.swift */; };
+		B3FDDC9D213897390078F0A2 /* PostDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +28,7 @@
 		4A21FCD7D470795E8731109E /* Pods-BlogMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlogMobile/Pods-BlogMobile.release.xcconfig"; sourceTree = "<group>"; };
 		B34438D121353BAE006480DF /* BlogMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34438D421353BAE006480DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B34438D621353BAE006480DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B34438D621353BAE006480DF /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B34438D921353BAE006480DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B34438DB21353BAF006480DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B34438DE21353BAF006480DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		B34438ED21363A69006480DF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		B34438F02137DA4C006480DF /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		B34438F12137DA4C006480DF /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		B39B9767213835CC003619B6 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,8 @@
 		B34438E821357984006480DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B34438D621353BAE006480DF /* ViewController.swift */,
+				B34438D621353BAE006480DF /* PostViewController.swift */,
+				B39B9767213835CC003619B6 /* DetailPostViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			children = (
 				B34438F02137DA4C006480DF /* PostCell.swift */,
 				B34438F12137DA4C006480DF /* PostCell.xib */,
+				B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B34438E721354604006480DF /* JSONPost.swift in Sources */,
-				B34438D721353BAE006480DF /* ViewController.swift in Sources */,
+				B39B9768213835CC003619B6 /* DetailPostViewController.swift in Sources */,
+				B34438D721353BAE006480DF /* PostViewController.swift in Sources */,
+				B3FDDC9D213897390078F0A2 /* PostDetailHeader.swift in Sources */,
 				B34438EE21363A69006480DF /* EndPoint.swift in Sources */,
 				B34438EC21357A62006480DF /* APIService.swift in Sources */,
 				B34438D521353BAE006480DF /* AppDelegate.swift in Sources */,

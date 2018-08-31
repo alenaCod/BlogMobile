@@ -10,18 +10,20 @@ import UIKit
 import Foundation
 
 class PostCell: UITableViewCell {
-
+    
     @IBOutlet weak var titlePost: UILabel!
+    
+    @IBOutlet weak var postView: UIView! {
+        didSet{
+            postView.layer.cornerRadius = 10
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-  func configureCell(forPost post: JSONPost){
-    titlePost.text = post.title
-    
+    func configureCell(forPost post: JSONPost){
+        titlePost.text = post.title + "vndfjksnjkdfjgj fjsgjklfsjg gkfdjgkldfjgkl"
     }
-    
-    
 }

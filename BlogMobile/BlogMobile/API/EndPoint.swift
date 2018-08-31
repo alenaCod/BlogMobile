@@ -30,7 +30,6 @@ enum Endpoint {
         case .postRequest:
             return baseUrl + "/api/v1/posts"
         }
-    }
-        
+    }        
 }
-//}
+
