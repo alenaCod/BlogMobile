@@ -20,6 +20,8 @@
 		B34438F32137DA4C006480DF /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34438F12137DA4C006480DF /* PostCell.xib */; };
 		B39B9768213835CC003619B6 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39B9767213835CC003619B6 /* DetailPostViewController.swift */; };
 		B3FDDC9D213897390078F0A2 /* PostDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */; };
+		B3FDDCA02138E0FE0078F0A2 /* Int + BlogMobile .swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDC9F2138E0FE0078F0A2 /* Int + BlogMobile .swift */; };
+		B3FDDCA22138E5CD0078F0A2 /* JSONMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDCA12138E5CD0078F0A2 /* JSONMark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		B34438F12137DA4C006480DF /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		B39B9767213835CC003619B6 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
 		B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailHeader.swift; sourceTree = "<group>"; };
+		B3FDDC9F2138E0FE0078F0A2 /* Int + BlogMobile .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + BlogMobile .swift"; sourceTree = "<group>"; };
+		B3FDDCA12138E5CD0078F0A2 /* JSONMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			children = (
 				B34438D421353BAE006480DF /* AppDelegate.swift */,
 				B34438E821357984006480DF /* Controller */,
+				B3FDDC9E2138E0C50078F0A2 /* Extension */,
 				B34438EA21357A32006480DF /* API */,
 				B34438E9213579E9006480DF /* JSON Model */,
 				B34438EF2137D81F006480DF /* View */,
@@ -110,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B34438E621354604006480DF /* JSONPost.swift */,
+				B3FDDCA12138E5CD0078F0A2 /* JSONMark.swift */,
 			);
 			path = "JSON Model";
 			sourceTree = "<group>";
@@ -131,6 +137,14 @@
 				B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B3FDDC9E2138E0C50078F0A2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDDC9F2138E0FE0078F0A2 /* Int + BlogMobile .swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		F9CAC23FA982BEF311CCB0A3 /* Frameworks */ = {
@@ -254,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FDDCA22138E5CD0078F0A2 /* JSONMark.swift in Sources */,
 				B34438E721354604006480DF /* JSONPost.swift in Sources */,
 				B39B9768213835CC003619B6 /* DetailPostViewController.swift in Sources */,
 				B34438D721353BAE006480DF /* PostViewController.swift in Sources */,
@@ -262,6 +277,7 @@
 				B34438EC21357A62006480DF /* APIService.swift in Sources */,
 				B34438D521353BAE006480DF /* AppDelegate.swift in Sources */,
 				B34438F22137DA4C006480DF /* PostCell.swift in Sources */,
+				B3FDDCA02138E0FE0078F0A2 /* Int + BlogMobile .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

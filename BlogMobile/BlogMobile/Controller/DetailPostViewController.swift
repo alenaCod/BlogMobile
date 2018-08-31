@@ -18,6 +18,8 @@ class DetailPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initHeader()
+        title = "Details"
+        loadMarksFromServer()
     }
     
     func initHeader() {
@@ -27,7 +29,19 @@ class DetailPostViewController: UIViewController {
             return
         }
     }
+    
+    private func loadMarksFromServer() {
+        guard let _post = post else {
+            return
+        }
+        
+        APIService.sharedInstance.getMarks(idPost: _post.id, comletion: {
+            [weak self] result in
+            self?.postView.configureViewMark(marks: result)
+        })
+    }
 }
+
 
 
 

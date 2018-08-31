@@ -14,11 +14,15 @@ import Alamofire
 //static let sharedInstance = EndPoint()
 
 enum Endpoint {
-    case postRequest
+    case getPosts
+    case getPostMarks(postId: Int)
 
     var method: HTTPMethod {
+        
         switch self {
-        case .postRequest:
+
+        case .getPosts,
+             .getPostMarks:
             return .get
         }
     }
@@ -27,8 +31,10 @@ enum Endpoint {
         let baseUrl = "http://fed-blog.herokuapp.com"
         
         switch self {
-        case .postRequest:
+        case .getPosts:
             return baseUrl + "/api/v1/posts"
+        case .getPostMarks(let postId):
+            return baseUrl + "/api/v1/posts/\(postId.toString())/marks"
         }
     }        
 }
