@@ -22,6 +22,9 @@
 		B3FDDC9D213897390078F0A2 /* PostDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */; };
 		B3FDDCA02138E0FE0078F0A2 /* Int + BlogMobile .swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDC9F2138E0FE0078F0A2 /* Int + BlogMobile .swift */; };
 		B3FDDCA22138E5CD0078F0A2 /* JSONMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDCA12138E5CD0078F0A2 /* JSONMark.swift */; };
+		B3FDDCA42139CFFF0078F0A2 /* JSONComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDCA32139CFFF0078F0A2 /* JSONComment.swift */; };
+		B3FDDCA72139D77D0078F0A2 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDCA52139D77D0078F0A2 /* CommentCell.swift */; };
+		B3FDDCA82139D77D0078F0A2 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FDDCA62139D77D0078F0A2 /* CommentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailHeader.swift; sourceTree = "<group>"; };
 		B3FDDC9F2138E0FE0078F0A2 /* Int + BlogMobile .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + BlogMobile .swift"; sourceTree = "<group>"; };
 		B3FDDCA12138E5CD0078F0A2 /* JSONMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMark.swift; sourceTree = "<group>"; };
+		B3FDDCA32139CFFF0078F0A2 /* JSONComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONComment.swift; sourceTree = "<group>"; };
+		B3FDDCA52139D77D0078F0A2 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		B3FDDCA62139D77D0078F0A2 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 			children = (
 				B34438E621354604006480DF /* JSONPost.swift */,
 				B3FDDCA12138E5CD0078F0A2 /* JSONMark.swift */,
+				B3FDDCA32139CFFF0078F0A2 /* JSONComment.swift */,
 			);
 			path = "JSON Model";
 			sourceTree = "<group>";
@@ -132,6 +139,8 @@
 		B34438EF2137D81F006480DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B3FDDCA52139D77D0078F0A2 /* CommentCell.swift */,
+				B3FDDCA62139D77D0078F0A2 /* CommentCell.xib */,
 				B34438F02137DA4C006480DF /* PostCell.swift */,
 				B34438F12137DA4C006480DF /* PostCell.xib */,
 				B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */,
@@ -215,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FDDCA82139D77D0078F0A2 /* CommentCell.xib in Resources */,
 				B34438DF21353BAF006480DF /* LaunchScreen.storyboard in Resources */,
 				B34438DC21353BAF006480DF /* Assets.xcassets in Resources */,
 				B34438DA21353BAE006480DF /* Main.storyboard in Resources */,
@@ -276,8 +286,10 @@
 				B34438EE21363A69006480DF /* EndPoint.swift in Sources */,
 				B34438EC21357A62006480DF /* APIService.swift in Sources */,
 				B34438D521353BAE006480DF /* AppDelegate.swift in Sources */,
+				B3FDDCA42139CFFF0078F0A2 /* JSONComment.swift in Sources */,
 				B34438F22137DA4C006480DF /* PostCell.swift in Sources */,
 				B3FDDCA02138E0FE0078F0A2 /* Int + BlogMobile .swift in Sources */,
+				B3FDDCA72139D77D0078F0A2 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,13 +16,15 @@ import Alamofire
 enum Endpoint {
     case getPosts
     case getPostMarks(postId: Int)
+    case getPostComments(postId: Int)
 
     var method: HTTPMethod {
         
         switch self {
 
         case .getPosts,
-             .getPostMarks:
+             .getPostMarks,
+             .getPostComments:
             return .get
         }
     }
@@ -35,6 +37,8 @@ enum Endpoint {
             return baseUrl + "/api/v1/posts"
         case .getPostMarks(let postId):
             return baseUrl + "/api/v1/posts/\(postId.toString())/marks"
+        case .getPostComments(let postId):
+            return baseUrl + "/api/v1/comments/posts\(postId.toString())"
         }
     }        
 }

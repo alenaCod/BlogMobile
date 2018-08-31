@@ -13,7 +13,7 @@ class APIService {
     
     static let sharedInstance = APIService()
     
-    func getPosts(comletion: @escaping (_ result: [JSONPost]?) -> Void) {
+    func getPosts(comletion: @escaping (_ result: [JSONPost]) -> Void) {
         let endpoint = Endpoint.getPosts
         Alamofire.request(endpoint.url, method: endpoint.method, parameters: nil, encoding: JSONEncoding.default)
             .responseJSON { response in
@@ -21,14 +21,14 @@ class APIService {
                 let decoder = JSONDecoder()
                 do {
                     guard let data = response.data else {
-                        comletion(nil)
+                        comletion([])
                         return
                     }
                     let posts: [JSONPost] = try decoder.decode([JSONPost].self, from: data)
                     print("posts: ", posts)
                     comletion(posts)
                 } catch {
-                    comletion(nil)
+                    comletion([])
                 }
         }
     }
@@ -47,6 +47,27 @@ class APIService {
                     let marks: [JSONMark] = try decoder.decode([JSONMark].self, from: data)
                     print("marks: ", marks)
                     comletion(marks)
+                } catch {
+                    comletion([])
+                }
+        }
+        
+    }
+    
+    func getComments(postId: Int, comletion: @escaping (_ result: [JSONComment]) -> Void) {
+        let endpoint = Endpoint.getPostComments(postId: postId)
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: nil, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                
+                let decoder = JSONDecoder()
+                do {
+                    guard let data = response.data else {
+                        comletion([])
+                        return
+                    }
+                    let comments: [JSONComment] = try decoder.decode([JSONComment].self, from: data)
+                    print("comments: ", comments)
+                    comletion(comments)
                 } catch {
                     comletion([])
                 }

@@ -59,6 +59,10 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="csU-85-HmO">
                                         <rect key="frame" x="0.0" y="150" width="375" height="497"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="iS0-eJ-JdX" id="pM5-j0-fYQ"/>
+                                            <outlet property="delegate" destination="iS0-eJ-JdX" id="xkt-HP-oOk"/>
+                                        </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c47-TH-kGs" customClass="PostDetailHeader" customModule="BlogMobile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
@@ -134,7 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="postView" destination="c47-TH-kGs" id="7Sk-I1-idE"/>
-                        <outlet property="view" destination="c47-TH-kGs" id="cyr-DZ-6Yc"/>
+                        <outlet property="tableView" destination="csU-85-HmO" id="ntr-T3-Dne"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mxt-o5-rgU" userLabel="First Responder" sceneMemberID="firstResponder"/>

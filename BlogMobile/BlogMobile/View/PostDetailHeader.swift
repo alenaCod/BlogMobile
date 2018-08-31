@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class PostDetailHeader: UIView {
     
@@ -20,9 +21,12 @@ class PostDetailHeader: UIView {
     }
     
     func configureViewMark(marks:[JSONMark])  {
-        print("===> marks: ", marks)
+        //print("===> marks: ", marks)
         //пройтись по каждому элементу и вывести все имена
-        self.nameMark.text = marks[0].name
-       // self.datePost.text = post.datePublic
+        let m = marks.map({$0.name})
+        // let str = marks.reduce(m[0], { $0.name + "," + $1.name})
+        //print("m",m)
+       
+        self.nameMark.text = m.joined(separator: ",") //"\(m[0]), \(m[1])"
     }
 }
