@@ -14,7 +14,7 @@ import Alamofire
 //static let sharedInstance = EndPoint()
 
 enum Endpoint {
-    case getPosts
+    case getPosts(page: Int, size: Int)
     case getPostMarks(postId: Int)
     case getPostComments(postId: Int)
 
@@ -33,12 +33,15 @@ enum Endpoint {
         let baseUrl = "http://fed-blog.herokuapp.com"
         
         switch self {
-        case .getPosts:
-            return baseUrl + "/api/v1/posts"
+        case .getPosts(let page,let size):
+            //return baseUrl + "/api/v1/posts?page=0&size=5"
+            //let url =
+            print("url: ")
+            return baseUrl + "/api/v1/posts?page=\(page.toString())&size=\(size.toString())"
         case .getPostMarks(let postId):
             return baseUrl + "/api/v1/posts/\(postId.toString())/marks"
         case .getPostComments(let postId):
-            return baseUrl + "/api/v1/comments/posts\(postId.toString())"
+            return baseUrl + "/api/v1/comments/posts/\(postId.toString())"
         }
     }        
 }

@@ -13,6 +13,7 @@ class CommentCell: UITableViewCell {
 
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+  
     @IBOutlet weak var textlabel: UILabel!
     
     override func awakeFromNib() {
@@ -23,7 +24,7 @@ class CommentCell: UITableViewCell {
     func configureCell(comment:JSONComment){
         authorLabel.text = comment.author
         dateLabel.text = comment.datePublic
-        textlabel.text = comment.text
+        textlabel.text = comment.text + "qwertyuioasdfghjklasd ghjkl;ertyuiopom,mbbvbvxvcddsdgfgvn mn ,mnjbhfgdgdcbv n m, .kjbyfvtgfx"
         
     }
 

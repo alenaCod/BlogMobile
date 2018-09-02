@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3AFFCFE0E9AC45B0A790F973 /* Pods_BlogMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349B992B3BA23EE45F9A6491 /* Pods_BlogMobile.framework */; };
+		B300F5A2213C087F00BE1CB3 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B300F5A0213C087F00BE1CB3 /* LoadingCell.swift */; };
+		B300F5A3213C087F00BE1CB3 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B300F5A1213C087F00BE1CB3 /* LoadingCell.xib */; };
 		B34438D521353BAE006480DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438D421353BAE006480DF /* AppDelegate.swift */; };
 		B34438D721353BAE006480DF /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438D621353BAE006480DF /* PostViewController.swift */; };
 		B34438DA21353BAE006480DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34438D821353BAE006480DF /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		349B992B3BA23EE45F9A6491 /* Pods_BlogMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlogMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40FE2479E9667AE095FF4CA3 /* Pods-BlogMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlogMobile/Pods-BlogMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		4A21FCD7D470795E8731109E /* Pods-BlogMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlogMobile/Pods-BlogMobile.release.xcconfig"; sourceTree = "<group>"; };
+		B300F5A0213C087F00BE1CB3 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		B300F5A1213C087F00BE1CB3 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		B34438D121353BAE006480DF /* BlogMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34438D421353BAE006480DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B34438D621353BAE006480DF /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 		B34438EF2137D81F006480DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B300F5A0213C087F00BE1CB3 /* LoadingCell.swift */,
+				B300F5A1213C087F00BE1CB3 /* LoadingCell.xib */,
 				B3FDDCA52139D77D0078F0A2 /* CommentCell.swift */,
 				B3FDDCA62139D77D0078F0A2 /* CommentCell.xib */,
 				B34438F02137DA4C006480DF /* PostCell.swift */,
@@ -226,6 +232,7 @@
 			files = (
 				B3FDDCA82139D77D0078F0A2 /* CommentCell.xib in Resources */,
 				B34438DF21353BAF006480DF /* LaunchScreen.storyboard in Resources */,
+				B300F5A3213C087F00BE1CB3 /* LoadingCell.xib in Resources */,
 				B34438DC21353BAF006480DF /* Assets.xcassets in Resources */,
 				B34438DA21353BAE006480DF /* Main.storyboard in Resources */,
 				B34438F32137DA4C006480DF /* PostCell.xib in Resources */,
@@ -285,6 +292,7 @@
 				B3FDDC9D213897390078F0A2 /* PostDetailHeader.swift in Sources */,
 				B34438EE21363A69006480DF /* EndPoint.swift in Sources */,
 				B34438EC21357A62006480DF /* APIService.swift in Sources */,
+				B300F5A2213C087F00BE1CB3 /* LoadingCell.swift in Sources */,
 				B34438D521353BAE006480DF /* AppDelegate.swift in Sources */,
 				B3FDDCA42139CFFF0078F0A2 /* JSONComment.swift in Sources */,
 				B34438F22137DA4C006480DF /* PostCell.swift in Sources */,

@@ -44,15 +44,12 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sw-CC-2mp">
                                 <rect key="frame" x="8" y="36" width="289" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5nh-4H-OCX"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aow-K7-T3A" secondAttribute="trailing" constant="8" id="74d-84-2xL"/>
                             <constraint firstItem="8Sw-CC-2mp" firstAttribute="leading" secondItem="KFn-mS-Q2O" secondAttribute="leading" constant="8" id="OY2-E4-lGA"/>
@@ -77,7 +74,7 @@
             <connections>
                 <outlet property="authorLabel" destination="BdL-LR-K5H" id="gLT-9r-jIz"/>
                 <outlet property="dateLabel" destination="aow-K7-T3A" id="LrD-f6-0jm"/>
-                <outlet property="textlabel" destination="8Sw-CC-2mp" id="84g-19-zQ3"/>
+                <outlet property="textlabel" destination="8Sw-CC-2mp" id="Ndg-6v-SFc"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="134.5"/>
         </tableViewCell>

@@ -12,7 +12,12 @@ import UIKit
 class DetailPostViewController: UIViewController {
     
     var post: JSONPost?
-    @IBOutlet weak var postView: PostDetailHeader!
+    @IBOutlet weak var postView: PostDetailHeader!{
+        didSet{
+            postView.layer.cornerRadius = 10
+        }
+    }
+       
     
     static let nibName = "CommentCell"
     static let cellIdentifier = "CommentCellID"
@@ -75,7 +80,7 @@ class DetailPostViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: DetailPostViewController.cellIdentifier)
         tableView.backgroundView = UIView(frame: .zero)
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.separatorStyle = .none
+        //tableView.separatorStyle = .none
 
         tableView.estimatedRowHeight = 91.0
         tableView.rowHeight = UITableViewAutomaticDimension
