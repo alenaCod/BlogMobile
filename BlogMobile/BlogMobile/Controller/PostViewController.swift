@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-
 class PostViewController: UIViewController {
     
     static let nibName = "PostCell"
@@ -21,10 +20,18 @@ class PostViewController: UIViewController {
         didSet{
             tableView.reloadData()
             isLoadingMore = false
+            refreshControl.endRefreshing()
         }
     }
     var currentPage = 0
     var isLoadingMore = false
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(PostViewController.refreshData), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +40,7 @@ class PostViewController: UIViewController {
         initTableView()
     }
     
-    private func loadPostsFromServer(page: Int = 0, size: Int = 10) {
+    private func loadPostsFromServer(page: Int = 0, size: Int = 5) {
         APIService.sharedInstance.getPosts(page: page, size: size, comletion: {
             [weak self] result in
 
@@ -58,6 +65,13 @@ class PostViewController: UIViewController {
         
         let loadingNib = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingNib, forCellReuseIdentifier: "LoadingCellID")
+        
+        // setup pull-to-refresh
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refreshData() {
+        loadPostsFromServer()
     }
     
     func goToDetailPost(forPost post: JSONPost){
@@ -126,9 +140,16 @@ extension PostViewController : UITableViewDelegate {
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.isLoadingMore = true
-        self.tableView.reloadData()
-        self.loadMoreItemsForList()
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        
+        if (actualPosition.y > 0){
+            print("DOWN")
+        }else{
+            print("UP")
+            self.isLoadingMore = true
+            self.tableView.reloadData()
+            self.loadMoreItemsForList()
+        }
     }
 }
 
