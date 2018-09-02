@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class DetailPostViewController: UIViewController {
     
     var post: JSONPost?
@@ -17,7 +18,8 @@ class DetailPostViewController: UIViewController {
             postView.layer.cornerRadius = 10
         }
     }
-       
+    
+  
     
     static let nibName = "CommentCell"
     static let cellIdentifier = "CommentCellID"

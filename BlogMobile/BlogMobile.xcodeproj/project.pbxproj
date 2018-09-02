@@ -20,6 +20,9 @@
 		B34438EE21363A69006480DF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438ED21363A69006480DF /* EndPoint.swift */; };
 		B34438F22137DA4C006480DF /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34438F02137DA4C006480DF /* PostCell.swift */; };
 		B34438F32137DA4C006480DF /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34438F12137DA4C006480DF /* PostCell.xib */; };
+		B389B081213C964D00F7E5A0 /* MarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389B080213C964C00F7E5A0 /* MarkView.swift */; };
+		B389B083213C965600F7E5A0 /* MarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B389B082213C965600F7E5A0 /* MarkView.xib */; };
+		B389B086213C977F00F7E5A0 /* TagField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389B085213C977F00F7E5A0 /* TagField.swift */; };
 		B39B9768213835CC003619B6 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39B9767213835CC003619B6 /* DetailPostViewController.swift */; };
 		B3FDDC9D213897390078F0A2 /* PostDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */; };
 		B3FDDCA02138E0FE0078F0A2 /* Int + BlogMobile .swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDDC9F2138E0FE0078F0A2 /* Int + BlogMobile .swift */; };
@@ -47,6 +50,9 @@
 		B34438ED21363A69006480DF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		B34438F02137DA4C006480DF /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		B34438F12137DA4C006480DF /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		B389B080213C964C00F7E5A0 /* MarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkView.swift; sourceTree = "<group>"; };
+		B389B082213C965600F7E5A0 /* MarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkView.xib; sourceTree = "<group>"; };
+		B389B085213C977F00F7E5A0 /* TagField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagField.swift; path = Model/TagField.swift; sourceTree = "<group>"; };
 		B39B9767213835CC003619B6 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
 		B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailHeader.swift; sourceTree = "<group>"; };
 		B3FDDC9F2138E0FE0078F0A2 /* Int + BlogMobile .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + BlogMobile .swift"; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		B34438D321353BAE006480DF /* BlogMobile */ = {
 			isa = PBXGroup;
 			children = (
+				B389B084213C975900F7E5A0 /* Model */,
 				B34438D421353BAE006480DF /* AppDelegate.swift */,
 				B34438E821357984006480DF /* Controller */,
 				B3FDDC9E2138E0C50078F0A2 /* Extension */,
@@ -150,8 +157,18 @@
 				B34438F02137DA4C006480DF /* PostCell.swift */,
 				B34438F12137DA4C006480DF /* PostCell.xib */,
 				B3FDDC9C213897390078F0A2 /* PostDetailHeader.swift */,
+				B389B080213C964C00F7E5A0 /* MarkView.swift */,
+				B389B082213C965600F7E5A0 /* MarkView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B389B084213C975900F7E5A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B389B085213C977F00F7E5A0 /* TagField.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B3FDDC9E2138E0C50078F0A2 /* Extension */ = {
@@ -235,6 +252,7 @@
 				B300F5A3213C087F00BE1CB3 /* LoadingCell.xib in Resources */,
 				B34438DC21353BAF006480DF /* Assets.xcassets in Resources */,
 				B34438DA21353BAE006480DF /* Main.storyboard in Resources */,
+				B389B083213C965600F7E5A0 /* MarkView.xib in Resources */,
 				B34438F32137DA4C006480DF /* PostCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,10 +268,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BlogMobile/Pods-BlogMobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ZFTokenField/ZFTokenField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZFTokenField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -292,11 +312,13 @@
 				B3FDDC9D213897390078F0A2 /* PostDetailHeader.swift in Sources */,
 				B34438EE21363A69006480DF /* EndPoint.swift in Sources */,
 				B34438EC21357A62006480DF /* APIService.swift in Sources */,
+				B389B081213C964D00F7E5A0 /* MarkView.swift in Sources */,
 				B300F5A2213C087F00BE1CB3 /* LoadingCell.swift in Sources */,
 				B34438D521353BAE006480DF /* AppDelegate.swift in Sources */,
 				B3FDDCA42139CFFF0078F0A2 /* JSONComment.swift in Sources */,
 				B34438F22137DA4C006480DF /* PostCell.swift in Sources */,
 				B3FDDCA02138E0FE0078F0A2 /* Int + BlogMobile .swift in Sources */,
+				B389B086213C977F00F7E5A0 /* TagField.swift in Sources */,
 				B3FDDCA72139D77D0078F0A2 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

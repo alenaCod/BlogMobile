@@ -8,12 +8,36 @@
 
 import UIKit
 import Foundation
+import ZFTokenField
 
 class PostDetailHeader: UIView {
     
     @IBOutlet weak var textPost: UILabel!
     @IBOutlet weak var datePost: UILabel!
-    @IBOutlet weak var nameMark: UILabel!
+
+    @IBOutlet weak var markField: ZFTokenField! {
+        didSet {
+            markField.delegate = self
+            markField.dataSource = self
+        }
+    }
+    @IBOutlet weak var markFieldViewHeightConstraint: NSLayoutConstraint!
+    
+    fileprivate let tokenMargin: CGFloat = 3.0
+    fileprivate let tokenHeight: CGFloat = 25.0
+    fileprivate var tagField = TagField(tokenMargin: Float(3), tokenHeight: Float(25))
+    
+    fileprivate var marksNames: [String] = []
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        initializeTokenField()
+    }
+    
+    private func initializeTokenField() {
+        markField.textField?.isUserInteractionEnabled = false
+        markField.textField?.placeholder = ""
+    }
     
     func configureView(post :JSONPost)  {
         self.textPost.text = post.text
@@ -21,12 +45,39 @@ class PostDetailHeader: UIView {
     }
     
     func configureViewMark(marks:[JSONMark])  {
-        //print("===> marks: ", marks)
-        //пройтись по каждому элементу и вывести все имена
-        let m = marks.map({$0.name})
-        // let str = marks.reduce(m[0], { $0.name + "," + $1.name})
-        //print("m",m)
-       
-        self.nameMark.text = m.joined(separator: ",") //"\(m[0]), \(m[1])"
+        self.marksNames = marks.map({$0.name})
+        markField.reloadData()
+        
+        if let height = tagField.getTokenViewScreenHeight() as? Float {
+            markFieldViewHeightConstraint.constant = CGFloat(height)
+        }
     }
 }
+
+// MARK: - ZFTokenFieldDelegate
+extension PostDetailHeader: ZFTokenFieldDelegate {
+    
+    func tokenMarginInToken(in tokenField: ZFTokenField!) -> CGFloat {
+        return tokenMargin
+    }
+}
+
+// MARK: - ZFTokenFieldDataSource
+extension PostDetailHeader: ZFTokenFieldDataSource {
+    func lineHeightForToken(in tokenField: ZFTokenField!) -> CGFloat {
+        return tokenHeight
+    }
+    
+    func numberOfToken(in tokenField: ZFTokenField!) -> UInt {
+        return UInt(marksNames.count)
+    }
+    
+    func tokenField(_ tokenField: ZFTokenField!, viewForTokenAt index: UInt) -> UIView! {
+        let tokenView = Bundle.main.loadNibNamed("MarkView", owner: nil, options: nil)!.first as! MarkView
+        tokenView.populate(text: marksNames[Int(index)])
+        tagField.calculateTokensWidth(tokenField, tokenView)
+        
+        return tokenView
+    }
+}
+

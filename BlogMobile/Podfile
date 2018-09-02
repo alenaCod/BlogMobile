@@ -8,5 +8,6 @@ target 'BlogMobile' do
 
   # Pods for BlogMobile
    pod 'Alamofire', '~> 4.7'
+   pod 'ZFTokenField'
 
 end
