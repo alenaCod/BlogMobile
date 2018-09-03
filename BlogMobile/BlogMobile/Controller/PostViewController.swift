@@ -40,8 +40,7 @@ class PostViewController: UIViewController {
         initTableView()
     }
     
-    
-    private func loadPostsFromServer(page: Int = 0, size: Int = 5) {
+    private func loadPostsFromServer(page: Int = 0, size: Int = 10) {
         APIService.sharedInstance.getPosts(page: page, size: size, comletion: {
             [weak self] result in
             
@@ -83,7 +82,7 @@ class PostViewController: UIViewController {
     }
     
     private func getListFromServer(_ page: Int){
-        loadPostsFromServer(page: page, size: 5)
+        loadPostsFromServer(page: page)
     }
     
     fileprivate func loadMoreItemsForList(){

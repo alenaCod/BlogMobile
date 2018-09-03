@@ -27,5 +27,4 @@ class MarkView: UIView {
         let size = lblTitle.sizeThatFits(CGSize(width: 1000, height: tokenViewHeight))
         self.frame = CGRect(x: 0, y: 0, width: size.width + 35, height: tokenViewHeight)
     }
- 
 }

@@ -24,7 +24,6 @@ class PostCell: UITableViewCell {
     }
     
     func configureCell(forPost post: JSONPost){
-        titlePost.text = post.title
-           
+        titlePost.text = post.title   
     }
 }

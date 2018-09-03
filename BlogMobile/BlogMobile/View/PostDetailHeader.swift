@@ -46,8 +46,7 @@ class PostDetailHeader: UIView {
     }
     
     func configureViewMark(marks:[JSONMark])  {
-        self.marksNames = marks.map({$0.name});
-            
+        self.marksNames = marks.map({$0.name})
         markField.reloadData()
         
         if let height = tagField.getTokenViewScreenHeight() as? Float {
@@ -57,7 +56,6 @@ class PostDetailHeader: UIView {
 }
 
 // MARK: - ZFTokenFieldDelegate
-
 extension PostDetailHeader: ZFTokenFieldDelegate {
     
     func tokenMarginInToken(in tokenField: ZFTokenField!) -> CGFloat {
@@ -66,7 +64,6 @@ extension PostDetailHeader: ZFTokenFieldDelegate {
 }
 
 // MARK: - ZFTokenFieldDataSource
-
 extension PostDetailHeader: ZFTokenFieldDataSource {
     func lineHeightForToken(in tokenField: ZFTokenField!) -> CGFloat {
         return tokenHeight

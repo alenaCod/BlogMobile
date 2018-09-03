@@ -26,7 +26,6 @@ class CommentCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func configureCell(comment:JSONComment){
@@ -34,6 +33,4 @@ class CommentCell: UITableViewCell {
         dateLabel.text = comment.datePublic
         textlabel.text = comment.text
     }
-
-    
 }

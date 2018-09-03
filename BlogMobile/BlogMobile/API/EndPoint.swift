@@ -21,7 +21,6 @@ enum Endpoint {
     var method: HTTPMethod {
         
         switch self {
-
         case .getPosts,
              .getPostMarks,
              .getPostComments:

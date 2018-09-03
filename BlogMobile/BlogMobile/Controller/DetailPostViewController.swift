@@ -31,6 +31,7 @@ class DetailPostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initHeader()
         title = "Details"
         loadMarksFromServer()
@@ -38,7 +39,7 @@ class DetailPostViewController: UIViewController {
         initTableView()
     }
     
-    func initHeader() {
+    private func initHeader() {
         if let _post = post  {
             postView.configureView(post: _post)
         } else {
@@ -57,7 +58,7 @@ class DetailPostViewController: UIViewController {
         })
     }
     
-    private func loadCommentsFromServer(page: Int = 0, size: Int = 1) {
+    private func loadCommentsFromServer(page: Int = 0, size: Int = 10) {
         guard let _post = post else {
             return
         }
@@ -89,7 +90,7 @@ class DetailPostViewController: UIViewController {
     }
     
     private func getListFromServer(_ page: Int){
-        loadCommentsFromServer(page: page, size: 1)
+        loadCommentsFromServer(page: page)
     }
     
     fileprivate func loadMoreItemsForList(){
@@ -117,10 +118,10 @@ extension DetailPostViewController: UITableViewDataSource {
             return cell
         }
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
