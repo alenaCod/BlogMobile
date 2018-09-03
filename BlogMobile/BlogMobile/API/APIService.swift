@@ -54,8 +54,8 @@ class APIService {
         
     }
     
-    func getComments(postId: Int, comletion: @escaping (_ result: [JSONComment]) -> Void) {
-        let endpoint = Endpoint.getPostComments(postId: postId)
+    func getComments(postId: Int, page: Int, size: Int, comletion: @escaping (_ result: [JSONComment]) -> Void) {
+        let endpoint = Endpoint.getPostComments(postId: postId, page: page, size: size)
         Alamofire.request(endpoint.url, method: endpoint.method, parameters: nil, encoding: JSONEncoding.default)
             .responseJSON { response in
                 

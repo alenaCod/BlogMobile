@@ -71,6 +71,7 @@ class PostViewController: UIViewController {
     }
     
     @objc func refreshData() {
+        currentPage = 0
         loadPostsFromServer()
     }
     

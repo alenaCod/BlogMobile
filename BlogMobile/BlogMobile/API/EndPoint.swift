@@ -16,7 +16,7 @@ import Alamofire
 enum Endpoint {
     case getPosts(page: Int, size: Int)
     case getPostMarks(postId: Int)
-    case getPostComments(postId: Int)
+    case getPostComments(postId: Int, page: Int, size: Int)
 
     var method: HTTPMethod {
         
@@ -34,14 +34,11 @@ enum Endpoint {
         
         switch self {
         case .getPosts(let page,let size):
-            //return baseUrl + "/api/v1/posts?page=0&size=5"
-            //let url =
-            print("url: ")
             return baseUrl + "/api/v1/posts?page=\(page.toString())&size=\(size.toString())"
         case .getPostMarks(let postId):
             return baseUrl + "/api/v1/posts/\(postId.toString())/marks"
-        case .getPostComments(let postId):
-            return baseUrl + "/api/v1/comments/posts/\(postId.toString())"
+        case .getPostComments(let postId, let page, let size):
+            return baseUrl + "/api/v1/comments/posts/\(postId.toString())?page=\(page.toString())&size=\(size.toString())"
         }
     }        
 }
