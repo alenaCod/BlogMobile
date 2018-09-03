@@ -51,7 +51,6 @@ class APIService {
                     comletion([])
                 }
         }
-        
     }
     
     func getComments(postId: Int, page: Int, size: Int, comletion: @escaping (_ result: [JSONComment]) -> Void) {
@@ -72,7 +71,6 @@ class APIService {
                     comletion([])
                 }
         }
-        
     }
 }
 

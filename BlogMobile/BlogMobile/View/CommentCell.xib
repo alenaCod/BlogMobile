@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aow-K7-T3A" secondAttribute="trailing" constant="8" id="74d-84-2xL"/>
                             <constraint firstItem="8Sw-CC-2mp" firstAttribute="leading" secondItem="KFn-mS-Q2O" secondAttribute="leading" constant="8" id="OY2-E4-lGA"/>
@@ -73,6 +73,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorLabel" destination="BdL-LR-K5H" id="gLT-9r-jIz"/>
+                <outlet property="commentView" destination="KFn-mS-Q2O" id="6Wv-ZZ-7IR"/>
                 <outlet property="dateLabel" destination="aow-K7-T3A" id="LrD-f6-0jm"/>
                 <outlet property="textlabel" destination="8Sw-CC-2mp" id="Ndg-6v-SFc"/>
             </connections>

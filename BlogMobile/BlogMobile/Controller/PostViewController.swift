@@ -43,7 +43,7 @@ class PostViewController: UIViewController {
     private func loadPostsFromServer(page: Int = 0, size: Int = 5) {
         APIService.sharedInstance.getPosts(page: page, size: size, comletion: {
             [weak self] result in
-
+            
             if let _isLoadingMore = self?.isLoadingMore, _isLoadingMore {
                 self?.post.append(contentsOf: result)
                 self?.tableView.reloadData()
@@ -58,7 +58,7 @@ class PostViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: PostViewController.cellIdentifier)
         tableView.backgroundView = UIView(frame: .zero)
         tableView.tableFooterView = UIView(frame: .zero)
-        //tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
         
         tableView.estimatedRowHeight = 65.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -90,7 +90,7 @@ class PostViewController: UIViewController {
         print("current page", currentPage)
         getListFromServer(currentPage)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -139,13 +139,13 @@ extension PostViewController : UITableViewDelegate {
             goToDetailPost(forPost: p)
         }
     }
-
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         
         if (actualPosition.y > 0){
             print("DOWN")
-        }else{
+        } else {
             print("UP")
             self.isLoadingMore = true
             self.tableView.reloadData()

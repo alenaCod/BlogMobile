@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.42438998287671242" colorSpace="deviceWhite"/>
+                        <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstItem="Bmf-aL-2Vi" firstAttribute="top" secondItem="Tqi-Aj-AQG" secondAttribute="top" constant="8" id="Hhh-Ji-aeP"/>
                             <constraint firstAttribute="bottom" secondItem="Bmf-aL-2Vi" secondAttribute="bottom" constant="8" id="d27-CT-gjC"/>

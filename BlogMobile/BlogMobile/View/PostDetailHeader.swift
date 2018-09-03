@@ -14,13 +14,14 @@ class PostDetailHeader: UIView {
     
     @IBOutlet weak var textPost: UILabel!
     @IBOutlet weak var datePost: UILabel!
-
+    
     @IBOutlet weak var markField: ZFTokenField! {
         didSet {
             markField.delegate = self
             markField.dataSource = self
         }
     }
+    
     @IBOutlet weak var markFieldViewHeightConstraint: NSLayoutConstraint!
     
     fileprivate let tokenMargin: CGFloat = 3.0
@@ -40,12 +41,13 @@ class PostDetailHeader: UIView {
     }
     
     func configureView(post :JSONPost)  {
-        self.textPost.text = post.text
+        self.textPost.text = post.text + "" + "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley "
         self.datePost.text = post.datePublic
     }
     
     func configureViewMark(marks:[JSONMark])  {
-        self.marksNames = marks.map({$0.name})
+        self.marksNames = marks.map({$0.name}); ["Lorem","Ipsum", "is simply", "dummy", "text", "of the printing", "and"]
+        //
         markField.reloadData()
         
         if let height = tagField.getTokenViewScreenHeight() as? Float {
@@ -55,6 +57,7 @@ class PostDetailHeader: UIView {
 }
 
 // MARK: - ZFTokenFieldDelegate
+
 extension PostDetailHeader: ZFTokenFieldDelegate {
     
     func tokenMarginInToken(in tokenField: ZFTokenField!) -> CGFloat {
@@ -63,6 +66,7 @@ extension PostDetailHeader: ZFTokenFieldDelegate {
 }
 
 // MARK: - ZFTokenFieldDataSource
+
 extension PostDetailHeader: ZFTokenFieldDataSource {
     func lineHeightForToken(in tokenField: ZFTokenField!) -> CGFloat {
         return tokenHeight

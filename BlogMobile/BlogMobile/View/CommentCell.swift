@@ -11,6 +11,11 @@ import Foundation
 
 class CommentCell: UITableViewCell {
 
+    @IBOutlet weak var commentView: UIView!{
+        didSet{
+            commentView.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
   
@@ -24,7 +29,7 @@ class CommentCell: UITableViewCell {
     func configureCell(comment:JSONComment){
         authorLabel.text = comment.author
         dateLabel.text = comment.datePublic
-        textlabel.text = comment.text + "qwertyuioasdfghjklasd ghjkl;ertyuiopom,mbbvbvxvcddsdgfgvn mn ,mnjbhfgdgdcbv n m, .kjbyfvtgfx"
+        textlabel.text = comment.text + " " + "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         
     }
 

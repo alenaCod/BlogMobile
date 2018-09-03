@@ -19,8 +19,6 @@ class DetailPostViewController: UIViewController {
         }
     }
     
-  
-    
     static let nibName = "CommentCell"
     static let cellIdentifier = "CommentCellID"
     
@@ -68,7 +66,7 @@ class DetailPostViewController: UIViewController {
         guard let _post = post else {
             return
         }
-
+        
         APIService.sharedInstance.getComments(postId: _post.id, page: page, size: size, comletion: {
             [weak self] result in
             
@@ -80,23 +78,14 @@ class DetailPostViewController: UIViewController {
             }
         })
     }
-            
-//            if let _result = result as? [JSONComment] {
-//                self?.comments = _result
-//            } else {
-//                self?.comments = []
-//            }
-//        })
-//
-//    }
     
     private func initTableView() {
         let nib = UINib(nibName: DetailPostViewController.nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DetailPostViewController.cellIdentifier)
         tableView.backgroundView = UIView(frame: .zero)
         tableView.tableFooterView = UIView(frame: .zero)
-        //tableView.separatorStyle = .none
-
+        tableView.separatorStyle = .none
+        
         tableView.estimatedRowHeight = 91.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -116,28 +105,28 @@ class DetailPostViewController: UIViewController {
 }
 
 extension DetailPostViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailPostViewController.cellIdentifier) as! CommentCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
-
-        cell.configureCell(comment: comments[indexPath.row])
-
-        return cell
-     } else {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCellID", for: indexPath) as! LoadingCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
-        
-        cell.spinner.startAnimating()
-        return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailPostViewController.cellIdentifier) as! CommentCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            
+            cell.configureCell(comment: comments[indexPath.row])
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCellID", for: indexPath) as! LoadingCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            
+            cell.spinner.startAnimating()
+            return cell
         }
-}
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-   
-
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -151,21 +140,20 @@ extension DetailPostViewController: UITableViewDataSource {
 }
 
 extension DetailPostViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-//
-//        if (actualPosition.y > 0){
-//            print("DOWN")
-//        }else{
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        
+        if (actualPosition.y < 0){
             print("UP")
             self.isLoadingMore = true
             self.tableView.reloadData()
             self.loadMoreItemsForList()
         }
-    //}
+    }
 }
 
 
