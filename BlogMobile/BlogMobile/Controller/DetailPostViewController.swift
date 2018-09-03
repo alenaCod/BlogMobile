@@ -13,12 +13,7 @@ import UIKit
 class DetailPostViewController: UIViewController {
     
     var post: JSONPost?
-    @IBOutlet weak var postView: PostDetailHeader!{
-        didSet{
-            postView.layer.cornerRadius = 10
-        }
-    }
-    
+    @IBOutlet weak var postView: PostDetailHeader!
     static let nibName = "CommentCell"
     static let cellIdentifier = "CommentCellID"
     

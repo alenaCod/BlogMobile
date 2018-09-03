@@ -23,43 +23,43 @@
                         <rect key="frame" x="8" y="8" width="304" height="74.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin ggg tttt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdL-LR-K5H">
-                                <rect key="frame" x="8" y="8" width="109" height="20"/>
+                                <rect key="frame" x="16" y="16" width="109" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="pkb-j6-jZq"/>
                                     <constraint firstAttribute="height" constant="20" id="yjd-kB-Ojs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-05-18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aow-K7-T3A">
-                                <rect key="frame" x="200" y="8" width="96" height="20"/>
+                                <rect key="frame" x="200" y="16" width="96" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="T3y-qW-kxr"/>
                                     <constraint firstAttribute="width" constant="96" id="Yrb-9D-lNP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sw-CC-2mp">
-                                <rect key="frame" x="8" y="36" width="288" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="44" width="272" height="14.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aow-K7-T3A" secondAttribute="trailing" constant="8" id="74d-84-2xL"/>
-                            <constraint firstItem="8Sw-CC-2mp" firstAttribute="leading" secondItem="KFn-mS-Q2O" secondAttribute="leading" constant="8" id="OY2-E4-lGA"/>
-                            <constraint firstItem="BdL-LR-K5H" firstAttribute="top" secondItem="KFn-mS-Q2O" secondAttribute="top" constant="8" id="Vwc-bc-ARp"/>
+                            <constraint firstItem="8Sw-CC-2mp" firstAttribute="leading" secondItem="KFn-mS-Q2O" secondAttribute="leading" constant="16" id="OY2-E4-lGA"/>
+                            <constraint firstItem="BdL-LR-K5H" firstAttribute="top" secondItem="KFn-mS-Q2O" secondAttribute="top" constant="16" id="Vwc-bc-ARp"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="74.5" id="W5P-cl-AjT"/>
-                            <constraint firstAttribute="trailing" secondItem="8Sw-CC-2mp" secondAttribute="trailing" constant="8" id="WJA-iU-HId"/>
+                            <constraint firstAttribute="trailing" secondItem="8Sw-CC-2mp" secondAttribute="trailing" constant="16" id="WJA-iU-HId"/>
                             <constraint firstItem="8Sw-CC-2mp" firstAttribute="top" secondItem="BdL-LR-K5H" secondAttribute="bottom" constant="8" id="Xb5-zJ-RWL"/>
-                            <constraint firstItem="BdL-LR-K5H" firstAttribute="leading" secondItem="KFn-mS-Q2O" secondAttribute="leading" constant="8" id="mRk-Bu-36g"/>
-                            <constraint firstAttribute="bottom" secondItem="8Sw-CC-2mp" secondAttribute="bottom" constant="8.5" id="qPL-qJ-6zt"/>
-                            <constraint firstItem="aow-K7-T3A" firstAttribute="top" secondItem="KFn-mS-Q2O" secondAttribute="top" constant="8" id="trI-1p-MhY"/>
+                            <constraint firstItem="BdL-LR-K5H" firstAttribute="leading" secondItem="KFn-mS-Q2O" secondAttribute="leading" constant="16" id="mRk-Bu-36g"/>
+                            <constraint firstAttribute="bottom" secondItem="8Sw-CC-2mp" secondAttribute="bottom" constant="16" id="qPL-qJ-6zt"/>
+                            <constraint firstItem="aow-K7-T3A" firstAttribute="top" secondItem="KFn-mS-Q2O" secondAttribute="top" constant="16" id="trI-1p-MhY"/>
                         </constraints>
                     </view>
                 </subviews>

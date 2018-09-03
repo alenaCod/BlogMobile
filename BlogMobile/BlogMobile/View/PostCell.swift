@@ -24,6 +24,7 @@ class PostCell: UITableViewCell {
     }
     
     func configureCell(forPost post: JSONPost){
-        titlePost.text = post.title //+ "vndfjksnjkdfjgj fjsgjklfsjg gkfdjgkldfjgkl"
+        titlePost.text = post.title
+           
     }
 }

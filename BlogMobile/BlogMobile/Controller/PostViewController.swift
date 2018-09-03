@@ -40,6 +40,7 @@ class PostViewController: UIViewController {
         initTableView()
     }
     
+    
     private func loadPostsFromServer(page: Int = 0, size: Int = 5) {
         APIService.sharedInstance.getPosts(page: page, size: size, comletion: {
             [weak self] result in

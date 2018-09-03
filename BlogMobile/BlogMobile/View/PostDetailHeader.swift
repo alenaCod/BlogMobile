@@ -24,9 +24,9 @@ class PostDetailHeader: UIView {
     
     @IBOutlet weak var markFieldViewHeightConstraint: NSLayoutConstraint!
     
-    fileprivate let tokenMargin: CGFloat = 3.0
-    fileprivate let tokenHeight: CGFloat = 25.0
-    fileprivate var tagField = TagField(tokenMargin: Float(3), tokenHeight: Float(25))
+    fileprivate let tokenMargin: CGFloat = 5.0
+    fileprivate let tokenHeight: CGFloat = 30.0
+    fileprivate var tagField = TagField(tokenMargin: Float(5), tokenHeight: Float(30))
     
     fileprivate var marksNames: [String] = []
     
@@ -41,13 +41,13 @@ class PostDetailHeader: UIView {
     }
     
     func configureView(post :JSONPost)  {
-        self.textPost.text = post.text + "" + "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley "
+        self.textPost.text = post.text
         self.datePost.text = post.datePublic
     }
     
     func configureViewMark(marks:[JSONMark])  {
-        self.marksNames = marks.map({$0.name}); ["Lorem","Ipsum", "is simply", "dummy", "text", "of the printing", "and"]
-        //
+        self.marksNames = marks.map({$0.name});
+            
         markField.reloadData()
         
         if let height = tagField.getTokenViewScreenHeight() as? Float {

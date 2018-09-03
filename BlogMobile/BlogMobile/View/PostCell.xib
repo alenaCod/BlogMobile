@@ -23,22 +23,23 @@
                         <rect key="frame" x="8" y="5" width="304" height="51.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmf-aL-2Vi">
-                                <rect key="frame" x="8" y="8" width="288" height="35.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="16" width="272" height="19.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Bmf-aL-2Vi" firstAttribute="top" secondItem="Tqi-Aj-AQG" secondAttribute="top" constant="8" id="Hhh-Ji-aeP"/>
-                            <constraint firstAttribute="bottom" secondItem="Bmf-aL-2Vi" secondAttribute="bottom" constant="8" id="d27-CT-gjC"/>
-                            <constraint firstAttribute="trailing" secondItem="Bmf-aL-2Vi" secondAttribute="trailing" constant="8" id="fP5-hB-WBP"/>
-                            <constraint firstItem="Bmf-aL-2Vi" firstAttribute="leading" secondItem="Tqi-Aj-AQG" secondAttribute="leading" constant="8" id="pNj-3L-6T0"/>
+                            <constraint firstItem="Bmf-aL-2Vi" firstAttribute="top" secondItem="Tqi-Aj-AQG" secondAttribute="top" constant="16" id="Hhh-Ji-aeP"/>
+                            <constraint firstAttribute="bottom" secondItem="Bmf-aL-2Vi" secondAttribute="bottom" constant="16" id="d27-CT-gjC"/>
+                            <constraint firstAttribute="trailing" secondItem="Bmf-aL-2Vi" secondAttribute="trailing" constant="16" id="fP5-hB-WBP"/>
+                            <constraint firstItem="Bmf-aL-2Vi" firstAttribute="leading" secondItem="Tqi-Aj-AQG" secondAttribute="leading" constant="16" id="pNj-3L-6T0"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="51.5" id="qWS-qp-vKJ"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Tqi-Aj-AQG" secondAttribute="bottom" constant="8" id="FWh-Mh-RAZ"/>
                     <constraint firstItem="Tqi-Aj-AQG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Vpb-0A-lbs"/>

@@ -13,7 +13,7 @@ class MarkView: UIView {
     
     @IBOutlet weak var lblTitle: UILabel!
 
-    private let tokenViewHeight: CGFloat = 20.0
+    private let tokenViewHeight: CGFloat = 25.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
